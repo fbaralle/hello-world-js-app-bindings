@@ -178,7 +178,11 @@ render();
 
 (async () => {
   try {
-    const res = await fetch('api/binding-status', { cache: 'no-store' });
+    // import.meta.env.BASE_URL is populated by Vite from the `base` config
+    // (set in vite.config.js from COSMIC_MOUNT_PATH). It always has a
+    // trailing slash, so `${BASE_URL}api/...` works whether base is "/" or
+    // "/mount-path/".
+    const res = await fetch(`${import.meta.env.BASE_URL}api/binding-status`, { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     render({ data: await res.json() });
   } catch (e) {
