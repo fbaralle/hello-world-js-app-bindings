@@ -10,11 +10,12 @@
     "cf:types": "wrangler types"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.36.0",
     "@cloudflare/workers-types": "^4.20260416.2",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.4",
     "tailwindcss": "^3.4.17",
     "vite": "^6.3.5",
-    "wrangler": "^4.83.0"
+    "wrangler": "^4.90.0"
   }
 }
